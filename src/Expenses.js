@@ -3,8 +3,10 @@ import IconImage from "./images/add-icon.png";
 import RemoveIcon from "./images/remove-icon.png"
 
 export default function Expenses(props) {
-  const [addedExpenses, setAddedExpenses] = useState([]);
-  const [expenseValues, setExpenseValues] = useState([]);
+  const [addedExpenses, setAddedExpenses] = useState([]); //intializing state
+  const [expenseValues, setExpenseValues] = useState([]); //intializing state
+  console.log("addedExpenses:", addedExpenses);
+console.log("expenseValues:", expenseValues);
 
   function addExpense() {
     const newExpenseId = Date.now()
@@ -26,12 +28,12 @@ export default function Expenses(props) {
     );
     setAddedExpenses([...addedExpenses, userNewExpense]);
     setExpenseValues([...expenseValues, { written: "", money: 0, id: newExpenseId}]);
-  }
+  } //adds functionalitly to add expense button
 
   function handleExpenseValueChange(event, expenseIndex) {
-    const { id, value } = event.target;
+    const { id, value } = event.target; //getting the id and corresponding value of the expense element
     const field = id.split("-")[0]; 
-    const newExpenseValues = [...expenseValues];
+    const newExpenseValues = [...expenseValues]; //accessing existing expenses array.
     newExpenseValues[expenseIndex] = {
       ...newExpenseValues[expenseIndex],
       [field]: field === "money" ? parseFloat(value) : value,

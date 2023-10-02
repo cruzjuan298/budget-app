@@ -14,7 +14,6 @@ export default function Navbar(){
                 <Link to="/budget-meter">Budget Meter</Link>
             </li>
             <li id="navbar2">
-                <Link to="/budget-meter">Personalized Budget</Link>
             </li>
         </ul>
     </div>
