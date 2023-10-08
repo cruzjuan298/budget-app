@@ -22,4 +22,3 @@ Key Features Include:
 ## Technologies Used
 
 Built with: React.js
-Browser routes are integrated instead of traditional URLs.
